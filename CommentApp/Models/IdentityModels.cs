@@ -29,5 +29,7 @@ namespace CommentApp.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CommentApp.Models.CommentModels> CommentModels { get; set; }
     }
 }

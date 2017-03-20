@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CommentApp.Models.CommentModels>
+
+@{
+    ViewBag.Title = "CommentApp";
+}
+
+<h2>Comments</h2>
+
+<p>
+    @Html.ActionLink("New Comment", "InsertComment")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.insert)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.insert)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "DeleteComment", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
